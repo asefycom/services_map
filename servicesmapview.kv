@@ -4,3 +4,9 @@
     lat: 34.79
     lon: 48.51
     zoom: 10
+    on_zoom:
+        self.zoom = 7 if self.zoom < 7 else self.zoom
+    on_lat:
+        self.start_getting_markers_in_fov()
+    on_lon:
+        self.start_getting_markers_in_fov()
