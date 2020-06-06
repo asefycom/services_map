@@ -33,5 +33,6 @@ class ServicesMapView(MapView):
     def add_servicemarkers(self, marker):
         lat, lon = marker[14], marker[15]
         temp_marker = ServicesMarker(lat=lat, lon=lon)
+        temp_marker.marker_data = marker
         self.add_widget(temp_marker)
         self.markers_name.append(marker[1])
