@@ -1,4 +1,4 @@
-from mdlistdialog import MDListDialog
+from customdialogs import MDListDialog
 
 
 class ServicesMarkerPopup(MDListDialog):
