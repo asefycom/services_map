@@ -453,7 +453,7 @@ class MDInputDialog(BaseDialog):
         )
         self.add_widget(self.content_dialog)
         self.set_content(self.content_dialog)
-        Clock.schedule_once(self.set_field_focus, 0.5)
+
 
     def set_field_focus(self, interval):
         self.text_field.focus = True

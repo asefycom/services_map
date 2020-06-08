@@ -1,3 +1,5 @@
+from kivy.clock import Clock
+
 from customdialogs import MDInputDialog
 from urllib import parse
 from kivy.network.urlrequest import UrlRequest
@@ -6,7 +8,7 @@ import certifi
 import json
 
 class SearchPopupMenu(MDInputDialog):
-    title = "Search by Address"
+    title = "Find a City"
     text_button_ok = "Go!"
 
     def __init__(self):
@@ -14,9 +16,14 @@ class SearchPopupMenu(MDInputDialog):
         self.size_hint = [0.9, 0.3]
         self.events_callback = self.callback
 
+    def open(self):
+        super().open()
+        Clock.schedule_once(self.set_field_focus, 0.5)
+
     def callback(self, *args):
         address = self.text_field.text
-        self.geocode_get_lat_lon(address)
+        if len(address) != 0:
+            self.geocode_get_lat_lon(address)
 
 
     def geocode_get_lat_lon(self, address):
@@ -38,6 +45,7 @@ class SearchPopupMenu(MDInputDialog):
         cur_app = App.get_running_app()
         cur_mapview = cur_app.root.ids.mapview
         cur_mapview.center_on(lat, lon)
+        self.text_field.text = ""
 
     def failure(self, urlrequest, result):
         print("Failure")

@@ -13,6 +13,7 @@ class MainApp(MDApp):
         self.database = sqlite3.connect("mydb.sqlite")
         self.cursor = self.database.cursor()
         self.search_pop = SearchPopupMenu()
+        self.theme_cls.primary_palette = "DeepPurple"
 
 
 
