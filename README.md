@@ -1,3 +1,3 @@
 ## See the video course on HamRuyesh :
 
-[Kivy full tutorial: 3 in 1](https://hamruyesh.com/product/kivy-python-cross-platform-full-package/)
+[Django Pro Blog with Postgress](https://hamruyesh.com/product/django-example-tutorial-postgresql-blog-project/)
